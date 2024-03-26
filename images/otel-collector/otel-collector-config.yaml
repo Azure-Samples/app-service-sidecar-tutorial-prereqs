@@ -1,0 +1,32 @@
+receivers:
+  otlp:
+    protocols:
+      grpc:
+      http:
+
+processors:
+  batch:
+    send_batch_max_size: 100
+    send_batch_size: 10
+    timeout: 10s            
+
+exporters:
+  debug:
+    verbosity: detailed
+  azuremonitor:
+    connection_string: ${env:APPLICATIONINSIGHTS_CONNECTION_STRING}
+
+service:
+  pipelines:
+    traces:
+      receivers: [otlp]
+      exporters: [azuremonitor, debug]
+      processors: [batch]
+    metrics:
+      receivers: [otlp]
+      exporters: [azuremonitor, debug]
+      processors: [batch]
+    logs:
+      receivers: [otlp]
+      exporters: [azuremonitor, debug]
+      processors: [batch]

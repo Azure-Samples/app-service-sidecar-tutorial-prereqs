@@ -1,0 +1,15 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/Azure/azure-dev/main/schemas/v1.0/azure.yaml.json
+
+name: app-service-container-sidecar-quickstart-setup
+metadata:
+  template: app-service-container-sidecar-quickstart-setup@0.0.1-beta
+hooks:
+  postprovision:
+    posix: 
+      shell: sh
+      run: |
+        infra/azAcrBuild.sh && 
+        printf "\nAPPLICATIONINSIGHTS_CONNECTION_STRING =\033[1;33m $APPLICATIONINSIGHTS_CONNECTION_STRING\033[0m" && 
+        printf "\n\nOpen resource group in the portal:\033[1;36m $GROUP_URL\033[0m\n"
+      interactive: true
+      continueOnError: true

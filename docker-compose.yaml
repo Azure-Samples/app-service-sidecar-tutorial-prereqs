@@ -1,0 +1,27 @@
+version: "2"
+services:
+
+  # Collector
+  otel-collector:
+    build:
+      dockerfile: Dockerfile
+      context: ./images/otel-collector
+    restart: always
+    ports:
+      - "1888:1888"   # pprof extension
+      - "13133:13133" # health_check extension
+      - "4317:4317"   # OTLP gRPC receiver
+      - "4318:4318"   # OTLP gRPC receiver
+      - "55679:55679" # zpages extension
+
+  nginx:
+    build:
+      dockerfile: Dockerfile
+      context: ./images/nginx
+    restart: always
+    environment:
+      - OTEL_EXPORTER_OTLP_ENDPOINT=http://otel-collector:4317
+    ports:
+      - "8080:80"
+    depends_on:
+      - otel-collector

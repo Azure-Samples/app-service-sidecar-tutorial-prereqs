@@ -1,57 +1,24 @@
-# Project Name
+---
+page_type: sample
+languages:
+- azdeveloper
+- bicep
+products:
+- azure
+- azure-app-service
+- azure-container-registry
+- azure-virtual-network
+urlFragment: app-service-sidecar-tutorial-prereqs
+name: Deploy an environment used by the sidecar tutorial.
+description: 
+---
 
-(short, 1-3 sentenced, description of the project)
+# Prerequisite resources for the sidecar tutorial
 
-## Features
+In this repository is a ready-run Azure Developer CLI template, which generates the Azure resources you need to follow along with [Tutorial: Configure a sidecar container for custom container in Azure App Service (preview)](https://learn.microsoft.com/azure/app-service/tutorial-custom-container-sidecar).
 
-This project framework provides the following features:
+## Quickstart
 
-* Feature 1
-* Feature 2
-* ...
+See [Tutorial: Configure a sidecar container for custom container in Azure App Service (preview)](https://learn.microsoft.com/azure/app-service/tutorial-custom-container-sidecar).
 
-## Getting Started
-
-### Prerequisites
-
-(ideally very short, if any)
-
-- OS
-- Library version
-- ...
-
-### Installation
-
-(ideally very short)
-
-- npm install [package name]
-- mvn install
-- ...
-
-### Quickstart
-(Add steps to get up and running quickly)
-
-1. git clone [repository clone url]
-2. cd [repository name]
-3. ...
-
-
-## Demo
-
-A demo app is included to show how to use the project.
-
-To run the demo, follow these steps:
-
-(Add steps to start up the demo)
-
-1.
-2.
-3.
-
-## Resources
-
-(Any additional resources or related projects)
-
-- Link to supporting information
-- Link to similar sample
-- ...
+The template is meant to be run in the Azure Cloud Shell. To run it elsewhere, you need to first sign into both the Azure CLI (`az login`) and the Azure Developer CLI (`azd auth login`).
