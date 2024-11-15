@@ -26,3 +26,4 @@ output APPLICATIONINSIGHTS_CONNECTION_STRING string = resources.outputs.APPLICAT
 output GROUP_NAME string = resourceGroup.name
 output GROUP_URL string = format('https://portal.azure.com/#@/resource{0}', resourceGroup.id) 
 output ACR_NAME string = resources.outputs.ACR_NAME
+output MI_NAME string = resources.outputs.MI_NAME
