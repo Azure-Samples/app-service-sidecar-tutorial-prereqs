@@ -11,7 +11,7 @@ hooks:
         infra/azAcrBuild.sh && 
         printf "\nAPPLICATIONINSIGHTS_CONNECTION_STRING =\033[1;33m $APPLICATIONINSIGHTS_CONNECTION_STRING\033[0m" && 
         printf "\nAzure container registry name =\033[1;33m $ACR_NAME\033[0m" && 
-        printf "\nManaged identity name =\033[1;33m $MI_NAME\033[0m" && 
+        printf "\nManaged identity resource ID =\033[1;33m $MI_ID\033[0m" && 
         printf "\n\nOpen resource group in the portal:\033[1;36m $GROUP_URL\033[0m\n"
       interactive: true
       continueOnError: true
