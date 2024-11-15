@@ -55,3 +55,4 @@ resource applicationInsights 'Microsoft.Insights/components@2020-02-02' = {
 output APPLICATIONINSIGHTS_CONNECTION_STRING string = applicationInsights.properties.ConnectionString
 output ACR_NAME string = acr.name
 output MI_ID string = uai.id
+output MI_CLIENT_ID string = uai.clientId

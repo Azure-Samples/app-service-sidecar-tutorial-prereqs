@@ -27,3 +27,4 @@ output GROUP_NAME string = resourceGroup.name
 output GROUP_URL string = format('https://portal.azure.com/#@/resource{0}', resourceGroup.id) 
 output ACR_NAME string = resources.outputs.ACR_NAME
 output MI_ID string = resources.outputs.MI_ID
+output MI_CLIENT_ID string = resources.outputs.MI_CLIENT_ID
